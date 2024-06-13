@@ -1,0 +1,59 @@
+---
+// Vercel
+
+// SEO Component
+import SEO_Tags from "@/components/SEO_Tags.astro";
+// Astro Animations
+import { ViewTransitions } from "astro:transitions";
+// Fonts
+
+interface Props {
+  title_page: string;
+  description_page: string;
+  last_update: string;
+  keywords_page: string[];
+}
+
+const { title_page, description_page, keywords_page, last_update } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="es-MX" class="h-full antialiased scroll-smooth">
+  <head>
+    <ViewTransitions />
+    <SEO_Tags
+      title_page={title_page}
+      description_page={description_page}
+      last_update={last_update}
+      keywords_page={keywords_page}
+    />
+  </head>
+  <!-- Content -->
+  <body class="body">
+    <!-- SLOT -->
+    <slot />
+    <!-- SLOT -->
+    <style is:global>
+      html {
+        overflow-x: hidden;
+        color-scheme: light;
+      }
+
+      img {
+        content-visibility: auto;
+        image-rendering: optimizeSpeed;
+      }
+
+      body::-webkit-scrollbar,
+      &::-moz-scrollbar,
+      &::-ms-scrollbar,
+      &::-o-scrollbar {
+        overflow: hidden;
+        -ms-overflow-style: none;
+        display: none;
+      }
+    </style>
+    
+  </body>
+</html>
