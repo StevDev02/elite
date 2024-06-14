@@ -10,11 +10,11 @@ import {
 export function Carousel_Demo() {
 
    const images = [{
-      imagen_one: '../../../public/backgrounds/Carousel_Index/Comidas.jpg',
-      imagen_two: '../../../public/backgrounds/Carousel_Index/Eventos.jpg',
-      imagen_three: '../../../public/backgrounds/Carousel_Index/Networking.jpg',
-      imagen_four: '../../../public/backgrounds/Carousel_Index/Masterminds.jpg',
-      imagen_five: '../../../public/backgrounds/Carousel_Index/Especializaciones.jpg',
+      imagen_one: 'https://i.ibb.co/z8r7LcJ/Comidas.jpg',
+      imagen_two: 'https://i.ibb.co/B3Sszfh/Especializaciones.jpg',
+      imagen_three: 'https://i.ibb.co/MfqMsfM/Eventos.jpg',
+      imagen_four: 'https://i.ibb.co/37B8xWs/Masterminds.jpg',
+      imagen_five: 'https://i.ibb.co/54XF3sV/Networking.jpg',
    }]
 
    // Extraer las rutas de las imágenes del objeto
