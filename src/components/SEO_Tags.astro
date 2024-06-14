@@ -41,14 +41,14 @@ const resolvedImageWithDomain = new URL("/", Astro.site).toString();
     description: description_page.substring(0, 162),
     card: "summary_large_image",
     site: "@Academia Elite",
-    image: resolvedImageWithDomain || "/favicon.svg",
+    image: resolvedImageWithDomain || "/logo.svg",
     imageAlt: name_enterprise,
   }}
   openGraph={{
     basic: {
       title: makeTitle.substring(0, 60),
       type: "website",
-      image: resolvedImageWithDomain || "/favicon.svg",
+      image: resolvedImageWithDomain || "/logo.svg",
       url: canonicalURL,
     },
     optional: {
@@ -66,11 +66,11 @@ const resolvedImageWithDomain = new URL("/", Astro.site).toString();
   }}
   extend={{
     link: [
-      // Favicon
+      // logo
       {
         rel: "icon",
         type: "image/svg+xml",
-        href: "/favicon.svg",
+        href: "/logo.svg",
       },
       // Sitemap
       {

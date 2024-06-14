@@ -7,7 +7,7 @@ import {
 
 export function Accordion_Demo() {
    return (
-      <Accordion type="single" collapsible className="w-full mt-10">
+      <Accordion type="single" collapsible className="w-full lg:w-[881px] lg:max-w-[821px] mt-10">
          <AccordionItem value="item-1">
             <AccordionTrigger>¿Qué es la academia élite?</AccordionTrigger>
             <AccordionContent>

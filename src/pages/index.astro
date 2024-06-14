@@ -28,79 +28,80 @@ import Home from "@/layout/Layout.astro";
 
   
 
-  <div class="items-center justify-between hidden w-full h-full p-0 m-0 md:flex lg:flex">
-      <div class="flex items-center justify-center p-0 m-0 md:cursor-pointer lg:cursor-pointer lg:w-14 md:h-14 md:w-14 lg:h-14">
-        <a href="/">
-          <svg class="dark:text-white" fill="currentColor" version="1.0" xmlns="http://www.w3.org/2000/svg"
-              width="3.5rem" height="3.5rem" viewBox="0 0 1000.000000 1000.000000"
-              preserveAspectRatio="xMidYMid meet">
-      
-              <g transform="translate(0.000000,1000.000000) scale(0.100000,-0.100000)"stroke="none">
-                  <path d="M6105 6208 l-1117 -1123 -1114 1120 -1114 1120 0 -2217 c0 -2101 1
-                  -2218 18 -2227 14 -9 185 157 1120 1092 l1102 1102 0 -1108 0 -1107 1115 0
-                  1115 0 0 2235 c0 1229 -2 2235 -4 2235 -2 0 -507 -505 -1121 -1122z"/>
-              </g>
-          </svg>
-      </a>
-      </div>
-      <div class="flex items-center justify-center gap-6">
-          <div class="flex items-center justify-center gap-1 lg:text-base">
-              <a href="/auth/login" class="cursor-pointer dark:text-white md:text-sm lg:text-sm md:lg:font-semibold lg:font-semibold ">Iniciar Sesion</a href="/ini">
-          </div>
-          <a href="/auth/register" class="md:w-[120px] lg:w-[120px] md:h-7 lg:h-7 hover:font-medium dark:hover:font-light dark:font-medium bg-black dark:bg-white  my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full  before:w-full before:h-full dark:hover:text-white before:shadow-2xl before:bg-gradient-to-r before:from-[#fff] hover:text-black before:to-[#fff] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 dark:before:from-[#000] dark:before:to-[#000] text-white dark:text-black">Unete</a >
-          
-      </div>
+  <div class="grid place-content-center w-full">
+    <div class="md:w-[639px] lg:w-[1039px] lg:max-w-[1039px] items-center justify-between hidden w-full h-full p-0 m-0 md:flex lg:flex">
+        <div class="flex items-center justify-center p-0 m-0 md:cursor-pointer lg:cursor-pointer lg:w-14 md:h-14 md:w-14 lg:h-14">
+          <a href="/">
+            <svg class="dark:text-white" fill="currentColor" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                width="3.5rem" height="3.5rem" viewBox="0 0 1000.000000 1000.000000"
+                preserveAspectRatio="xMidYMid meet">
+        
+                <g transform="translate(0.000000,1000.000000) scale(0.100000,-0.100000)"stroke="none">
+                    <path d="M6105 6208 l-1117 -1123 -1114 1120 -1114 1120 0 -2217 c0 -2101 1
+                    -2218 18 -2227 14 -9 185 157 1120 1092 l1102 1102 0 -1108 0 -1107 1115 0
+                    1115 0 0 2235 c0 1229 -2 2235 -4 2235 -2 0 -507 -505 -1121 -1122z"/>
+                </g>
+            </svg>
+        </a>
+        </div>
+        <div class="flex items-center justify-center gap-6">
+            <div class="flex items-center justify-center gap-1 lg:text-base">
+                <a href="/auth/login" class="cursor-pointer dark:text-white md:text-sm lg:text-sm md:lg:font-semibold lg:font-semibold ">Iniciar Sesion</a href="/ini">
+            </div>
+            <a href="/auth/register" class="md:w-[120px] lg:w-[120px] md:h-7 lg:h-7 hover:font-medium dark:hover:font-light dark:font-medium bg-black dark:bg-white  my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full  before:w-full before:h-full dark:hover:text-white before:shadow-2xl before:bg-gradient-to-r before:from-[#fff] hover:text-black before:to-[#fff] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 dark:before:from-[#000] dark:before:to-[#000] text-white dark:text-black">Unete</a >
+            
+        </div>
+    </div>
   </div>
 </nav>
 
-<main>
-  <section class="w-full h-[92vh] lg:px-20 pt-20 flex-col-reverse text-center items-center justify-end md:pt-32 lg:pt-0 lg:flex-row flex lg:items-center lg:justify-between">
-
-      <div class="flex flex-col p-2 dark:text-white md:gap-3 lg:gap-5">
-          <h1 class="flex flex-col flex-wrap pb-5 text-xl font-bold lg:text-3xl lg:font-bold md:text-3xl md:font-semibold ">
-              <span>¿Estas cansado de esas aburridas</span>
-              <span>materias de tu escuela?</span>
-          </h1>
-          <p class="flex flex-col text-sm font-medium md:text-base md:font-medium lg:text-lg lg:font-medium">
-              <span>Deja los libros de texto por un momento y</span>
-              <span>sumérgete en el mundo de conocimientos</span>
-              <span>que solo la Academia Elite te puede ofrecer.</span>
-              <span>Aprende, innova y lidera!</span>
-          </p>        
-      </div>
-  
-      <img  src="/ilustraciones/ilustration_one.png" alt="">
-      
-  
+<main class="grid place-content-center w-full">
+  <section class="w-full grid place-content-center">
+    <section class="w-full lg:w-[1039px]  pt-20 flex-col-reverse text-center items-center justify-center md:pt-32 lg:flex-row flex">
+        <div class="flex flex-col p-2 dark:text-white md:gap-3 lg:gap-5">
+            <h1 class="flex flex-col flex-wrap pb-5 text-xl lg:text-3xl md:text-3xl">
+                <span>¿Estas cansado de esas aburridas</span>
+                <span>materias de tu escuela?</span>
+            </h1>
+            <p class="flex flex-col text-sm font-medium md:text-base md:font-medium lg:text-lg lg:font-medium">
+                <span>Deja los libros de texto por un momento y</span>
+                <span>sumérgete en el mundo de conocimientos</span>
+                <span>que solo la Academia Elite te puede ofrecer.</span>
+                <span>Aprende, innova y lidera!</span>
+            </p>        
+        </div>
+    
+        <img  src="/ilustraciones/ilustration_one.png" alt="">
+    </section>
   </section>
   
-  <section class="flex flex-col items-center justify-center gap-8 p-2 -mt-20 lg:gap-4 md:gap-0 lg:-mt-0">
-      <h2 class="text-2xl font-bold text-center text-wrap lg:font-bold lg:text-3xl md:text-3xl md:px-20 md:font-semibold">El punto de partida todo logro es el deseo</h2>
+  <section class="flex flex-col items-center justify-center gap-8 p-2 mt-20 lg:gap-4 md:gap-0 ">
+      <h2 class="text-2xl text-center lg:text-3xl md:text-3xl">El punto de partida de todo <br>logro es el deseo</h2>
       <ul class="grid items-center justify-center gap-6 md:mt-12 md:grid-cols-2">
           <li class="w-[350px] lg:w-[380px] lg:p-0 lg:h-[210px] md:text-sm p-2 flex flex-col items-center justify-center text-center h-[240px] rounded-lg border border-[#0000007c] lg:gap-1 ">
-                  <img class="lg:w-[18%] " src="/ilustraciones/llamadas_ilustration.png" alt="">
-                  <h2 class="text-xl font-bold">Llamadas semanales</h2>
+                  <img class="w-[18%] " src="/ilustraciones/llamadas_ilustration.png" alt="">
+                  <h2 class="text-xl">Llamadas semanales</h2>
                   <p>Habra llamadas semanales todos los <br> 
                       meses para aclarar tus dudas sobre <br> 
                       ciertos temas.</p>
           </li>
           <li class="w-[350px] lg:w-[380px] lg:p-0 lg:h-[210px] md:text-sm p-2 flex flex-col items-center justify-center text-center h-[240px] rounded-lg border border-[#0000007c] lg:gap-1 ">
-              <img class="lg:w-[18%] " src="ilustraciones/contenido_ilustration.png" alt="">
-              <h2 class="text-xl font-bold">+120 hrs de contenido</h2>
+              <img class="w-[18%]" src="ilustraciones/contenido_ilustration.png" alt="">
+              <h2 class="text-xl">+120 hrs de contenido</h2>
               <p>Disfruta de una valiosa biblioteca con <br>
                   +120 horas de contenido de formacion, <br>
                   impartida por expertos en cada disciplina</p>
           </li>
           <li class="w-[350px] lg:w-[380px] lg:p-0 lg:h-[210px] md:text-sm p-2 flex flex-col items-center justify-center text-center h-[240px] rounded-lg border border-[#0000007c] lg:gap-1 ">
-              <img class="lg:w-[18%] " src="ilustraciones/discord_ilustration.png" alt="">
-              <h2 class="text-xl font-bold">Acceso a la comunidad</h2>
+              <img class="w-[18%] " src="ilustraciones/discord_ilustration.png" alt="">
+              <h2 class="text-xl">Acceso a la comunidad</h2>
               <p>Ten acceso a nuestra comunidad de <br>
                   discord en donde conoceras a gente <br>
                   con tu misma mentalidad</p>
           </li>
           <li class="w-[350px] lg:w-[380px] lg:p-0 lg:h-[210px] md:text-sm p-2 flex flex-col items-center justify-center text-center h-[240px] rounded-lg border border-[#0000007c] lg:gap-1 ">
-              <img class="lg:w-[18%] " src="/ilustraciones/biblioteca_ilustration.png" alt="">
-              <h2 class="text-xl font-bold">Biblioteca digital</h2>
+              <img class="w-[18%] " src="/ilustraciones/biblioteca_ilustration.png" alt="">
+              <h2 class="text-xl">Biblioteca digital</h2>
               <p>
                   Ten acceso a toda un libreria digiltal <br>
                   con +1,000 libros, con los cuales podras <br>
@@ -111,7 +112,7 @@ import Home from "@/layout/Layout.astro";
   </section>
   
   <section class="flex flex-col items-center justify-center gap-8 p-2 mt-20 lg:gap-4 md:gap-0">
-      <h2 class="flex-wrap text-2xl font-bold text-center lg:font-bold lg:text-3xl md:text-3xl md:font-semibold">La plataforma que te permitirá elevar tu potencial al maximo</h2>
+      <h2 class="text-2xl text-center lg:text-3xl md:text-3xl">La plataforma que te permitirá <br>elevar tu potencial al maximo</h2>
   
       <ul class="grid gap-4 text-center md:grid-cols-2 lg:grid-cols-4 md:p-8">
           <li class="px-6 py-1 text-white bg-black rounded-full">Finanzas</li>
@@ -120,14 +121,14 @@ import Home from "@/layout/Layout.astro";
           <li class="px-8 py-1 border border-black rounded-full cursor-pointer hover:bg-black hover:text-white">Deporte y nutrición</li>
       </ul>
   
-      <div class="flex flex-col items-center justify-center lg:flex-row">
+      <div class="flex lg:ml-32 flex-col items-center justify-center lg:flex-row">
           <div class="w-[500px] lg:grid lg:place-content-center lg:h-[349px] ">
               <img class="cover" src="/ilustraciones/ilustration_dos.png" alt="">
           </div>
           
           <div class="flex lg:-ml-12 lg:w-[520px] lg:gap-3 px-20 justify-center flex-col gap-6">
-              <h5 class="font-medium ">Finanzas</h5>
-              <h2 class="text-xl font-bold text-center lg:text-start lg:font-bold lg:text-3xl md:text-3xl md:font-semibold">Vence los desafios del Mundo financiero</h2>
+              <h5 class="">Finanzas</h5>
+              <h2 class="text-xl text-center lg:text-start lg:text-3xl md:text-3xl">Vence los desafios del Mundo financiero</h2>
   
               <ul class="flex flex-col gap-4 lg:gap-4">
                   <li> 
@@ -152,7 +153,7 @@ import Home from "@/layout/Layout.astro";
   </section>
   
   <section class="flex flex-col items-center justify-center gap-8 p-2 px-8 mt-20 md:px-16 lg:px-60 lg:gap-4 md:gap-0">
-      <h2 class="text-xl font-bold text-center uppercase lg:font-bold lg:text-3xl md:text-3xl md:font-semibold">Preguntas frecuentes</h2>
+      <h2 class="text-xl text-center uppercase lg:text-3xl md:text-3xl">Preguntas frecuentes</h2>
   
       <Accordion_Demo client:idle />
   
@@ -161,7 +162,7 @@ import Home from "@/layout/Layout.astro";
   </section>
   
   <section class="flex flex-col items-center justify-center gap-8 p-2 px-8 mt-20 md:px-16 lg:px-60 lg:gap-4 md:gap-0">
-      <h2 class="text-xl font-bold text-center uppercase lg:font-bold lg:text-3xl md:text-3xl md:font-semibold">Proximamente</h2>
+      <h2 class="text-xl text-center uppercase lg:text-3xl md:text-3xl">Proximamente</h2>
   
       <Carousel_Demo client:idle />
   
@@ -220,6 +221,6 @@ import Home from "@/layout/Layout.astro";
   .hover_li:hover::after {
       background: black;
       width: 100%;
-      }
+    }
 
 </style>
