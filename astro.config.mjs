@@ -28,9 +28,6 @@ export default defineConfig({
     ,
     compressor({ gzip: true, brotli: false }),
   ],
-  experimental: {
-    actions: true,
-  },
   output: "server",
   adapter: vercel(),
 });
