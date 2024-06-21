@@ -5,15 +5,31 @@ import { app } from "@/services/server";
 import { getAuth } from "firebase-admin/auth";
 
 
-/* Verificar si el usuario está autenticado */
 const auth = getAuth(app);
 
-if (Astro.cookies.has("__session")) {
-  const sessionCookie = Astro.cookies.get("__session").value;
-  const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-  if (decodedCookie) {
-    return Astro.redirect("/dashboard");
+if (!Astro.cookies.has("__session")) {
+  return Astro.redirect("/signin");
+}
+
+
+const sessionCookieValue = Astro.cookies.get("__session")?.value;
+
+if (!sessionCookieValue) {
+  return Astro.redirect("/signin");
+}
+
+try {
+  const decodedCookie = await auth.verifySessionCookie(sessionCookieValue);
+  const user = await auth.getUser(decodedCookie.uid);
+
+  if (!user) {
+    return Astro.redirect("/signin");
   }
+
+
+} catch (error) {
+  console.error("Error al verificar sesión:", error);
+  return Astro.redirect("/signin");
 }
 ---
 
