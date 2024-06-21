@@ -130,7 +130,7 @@ export function Registers_Form() {
                 ¿Ya tienes una cuenta?
                 <a
                   className="px-4 py-1 ml-1 text-white bg-black rounded-full cursor-pointer"
-                  href="/login">Iniciar sesión</a>
+                  href="/auth/login">Iniciar sesión</a>
               </p>
             </div>
         </>

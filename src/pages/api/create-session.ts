@@ -1,27 +1,20 @@
 import { app } from "@/firebase/server";
-import type { APIRoute } from "astro"
-import { getAuth } from "firebase-admin/auth"
+import { getAuth } from "firebase-admin/auth";
+import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async ({ request, cookies, redirect }) => {
+export const POST: APIRoute = async ({ request, cookies }) => {
   const auth = getAuth(app);
 
   const idToken = request.headers.get("Authorization")?.split("Bearer ")[1];
   if (!idToken) {
-    return new Response(
-      "Token no encontrado",
-      { status: 401 }
-    );
+    return new Response("Token no encontrado", { status: 401 });
   }
 
   try {
     await auth.verifyIdToken(idToken);
   } catch (error) {
-    return new Response(
-      "Token invalido",
-      { status: 401 }
-    );
+    return new Response("Token inválido", { status: 401 });
   }
-
 
   const fiveDays = 60 * 60 * 24 * 5 * 1000;
   const sessionCookie = await auth.createSessionCookie(idToken, {
@@ -32,5 +25,5 @@ export const GET: APIRoute = async ({ request, cookies, redirect }) => {
     path: "/",
   });
 
-  return redirect("/dashboard");
+  return new Response(null, { status: 200 });
 };
