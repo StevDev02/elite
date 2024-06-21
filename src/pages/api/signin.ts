@@ -1,10 +1,9 @@
-import { app } from "@/services/server";
-import type { APIRoute } from "astro";
-import { getAuth } from "firebase-admin/auth";
+import { app } from "@/firebase/server";
+import type { APIRoute } from "astro"
+import { getAuth } from "firebase-admin/auth"
 
 export const GET: APIRoute = async ({ request, cookies, redirect }) => {
   const auth = getAuth(app);
-
 
   const idToken = request.headers.get("Authorization")?.split("Bearer ")[1];
   if (!idToken) {
@@ -13,7 +12,6 @@ export const GET: APIRoute = async ({ request, cookies, redirect }) => {
       { status: 401 }
     );
   }
-
 
   try {
     await auth.verifyIdToken(idToken);

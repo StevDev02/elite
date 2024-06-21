@@ -35,9 +35,8 @@ export function Registers_Form() {
                     placeholder="academy@correo.com"
                     value={email}
                     type="email"
-                    id="email"
+                    name="email" id="email"
                     onChange={handleChangeMail}
-                    name="email"
                     className="h-[40px] border px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"/>
                   <div
                     className="absolute inset-y-0 hidden pointer-events-none end-0 pe-3"
@@ -71,8 +70,7 @@ export function Registers_Form() {
                 <input
                     placeholder="@cademy2024"
                     type="password"
-                    id="password"
-                    name="password"
+                    name="password" id="password"
                     value={password}
                     onChange={handleChangePassword}
                     className="border h-[40px] px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"/>
@@ -99,8 +97,7 @@ export function Registers_Form() {
               </div>
 
             
-              <button
-              type="submit"
+              <button type="submit"
               disabled={!isValidEmail(email) || !isValidPassword(password)} 
                 className="w-full h-[38px] px-4 inline-flex justify-center items-center gap-x-2 text-[13px] font-semibold rounded-lg border border-transparent bg-black text-white hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none"
                 >Registrarse</button>
@@ -133,7 +130,7 @@ export function Registers_Form() {
                 ¿Ya tienes una cuenta?
                 <a
                   className="px-4 py-1 ml-1 text-white bg-black rounded-full cursor-pointer"
-                  href="/signin">Iniciar sesión</a>
+                  href="/login">Iniciar sesión</a>
               </p>
             </div>
         </>

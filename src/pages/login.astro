@@ -1,36 +1,22 @@
 ---
 // Layout
+import { app } from "@/firebase/server";
 import Login_ from "@/layout/Layout.astro"
-import { app } from "@/services/server";
 import { getAuth } from "firebase-admin/auth";
 
 
 const auth = getAuth(app);
-
-if (!Astro.cookies.has("__session")) {
-  return Astro.redirect("/signin");
-}
-
-
-const sessionCookieValue = Astro.cookies.get("__session")?.value;
-
-if (!sessionCookieValue) {
-  return Astro.redirect("/signin");
-}
-
-try {
-  const decodedCookie = await auth.verifySessionCookie(sessionCookieValue);
-  const user = await auth.getUser(decodedCookie.uid);
-
-  if (!user) {
-    return Astro.redirect("/signin");
+if (Astro.cookies.has("__session")) {
+  const sessionCookie = Astro.cookies.get("__session");
+    if (!sessionCookie) {
+      return Astro.redirect("/login");
+    }
+    const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+  if (decodedCookie) {
+    return Astro.redirect("/dashboard");
   }
-
-
-} catch (error) {
-  console.error("Error al verificar sesión:", error);
-  return Astro.redirect("/signin");
 }
+
 ---
 
 <Login_
@@ -135,8 +121,7 @@ try {
                   <input
                     placeholder="academy@correo.com"
                     type="email"
-                    id="email"
-                    name="email"
+                    name="email" id="email"
                     class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     required
                     aria-describedby="email-error"
@@ -176,8 +161,7 @@ try {
                   <input
                     placeholder="@cademy2024"
                     type="password"
-                    id="password"
-                    name="password"
+                    name="password" id="password"
                     class="block w-full px-4 py-3 text-sm border border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                     required
                     aria-describedby="password-error"
@@ -226,8 +210,7 @@ try {
               </div>
               <!-- End Checkbox -->
 
-              <button
-                type="submit"
+              <button type="submit"
                 class="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-semibold text-white bg-black border border-transparent rounded-lg gap-x-2 hover:bg-gray-900 disabled:opacity-50 disabled:pointer-events-none"
                 >Iniciar sesión</button
               >
@@ -250,14 +233,15 @@ try {
 </Login_>
 
 <script>
-  import { app } from "@/services/client";
-import {
+  import { app } from "@/firebase/client";
+  import {
     getAuth,
     inMemoryPersistence,
     signInWithEmailAndPassword,
   } from "firebase/auth";
 
   const auth = getAuth(app);
+
 
   auth.setPersistence(inMemoryPersistence);
 
@@ -277,17 +261,16 @@ import {
       password
     );
     const idToken = await userCredential.user.getIdToken();
-    const response = await fetch("/api/signin", {  
+    const response = await fetch("/api/signin", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${idToken}`,
       },
     });
 
-    console.log(response);
-
     if (response.redirected) {
-      window.location.assign(response.url);
+      window.location.assign(response.url)
+      
     }
   });
 </script>

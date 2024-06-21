@@ -1,4 +1,5 @@
 /// <reference path="../.astro/actions.d.ts" />
+/// <reference types="astro/client" />
 
 interface ImportMetaEnv {
     readonly FIREBASE_PRIVATE_KEY_ID: string;
