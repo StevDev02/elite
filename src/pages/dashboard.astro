@@ -1,0 +1,35 @@
+---
+import DashboardProvaider from "@/layout/Layout.astro";
+import { app } from "@/services/server";
+import { getAuth } from "firebase-admin/auth"
+
+const auth = getAuth(app);
+
+/* Verificar la sesión actual */
+if (!Astro.cookies.has("__session")) {
+  return Astro.redirect("/signin");
+}
+const sessionCookie = Astro.cookies.get("__session").value;
+const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+const user = await auth.getUser(decodedCookie.uid);
+
+if (!user) {
+  return Astro.redirect("/signin");
+}
+
+---
+
+<DashboardProvaider
+  title_page="Inicio"
+  description_page=""
+  last_update="2024-05-02"
+  keywords_page={[""]}
+>
+
+  <h1>Bienvenido {user.email}</h1>
+  <p>Nos alegra verte aquí</p>
+  <form action="/api/auth/signout">
+    <button type="submit">Cerrar sesión</button>
+  </form>
+
+</DashboardProvaider>

@@ -9,7 +9,6 @@ import { ViewTransitions } from "astro:transitions";
 import '@fontsource-variable/montserrat';
 import '../../public/fonts/sequel-100-black-sans-serif-font-1718353222-0/Sequel100Black-116.ttf';
 
-
 interface Props {
   title_page: string;
   description_page: string;
@@ -19,9 +18,10 @@ interface Props {
 
 const { title_page, description_page, keywords_page, last_update } =
   Astro.props;
+
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es-MX" class="h-full antialiased scroll-smooth">
   <head>
     <ViewTransitions />
@@ -63,6 +63,5 @@ const { title_page, description_page, keywords_page, last_update } =
         display: none;
       }
     </style>
-    
   </body>
 </html>

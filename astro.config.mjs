@@ -6,7 +6,6 @@ import vercel from "@astrojs/vercel/serverless";
 
 import compressor from "astro-compressor";
 
-// https://astro.build/config
 export default defineConfig({
   image: {
     passthrough: passthroughImageService(),
@@ -18,7 +17,6 @@ export default defineConfig({
     sitemap({
       changefreq: "monthly",
       priority: 0.8,
-      // Cambiar para el deploy
       lastmod: new Date("2024-06-11"),
       i18n: {
         defaultLocale: "es",
@@ -30,6 +28,9 @@ export default defineConfig({
     ,
     compressor({ gzip: true, brotli: false }),
   ],
+  experimental: {
+    actions: true,
+  },
   output: "server",
   adapter: vercel(),
 });
