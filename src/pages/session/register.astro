@@ -1,21 +1,21 @@
 ---
 import { Registers_Form } from "@/components/Registers_Form";
 import Register_ from "@/layout/Layout.astro";
-// import { getAuth } from "firebase-admin/auth";
-// import { app } from "@/firebase/server";
+import { getAuth } from "firebase-admin/auth";
+import { app } from "@/firebase/server";
 
 
-// const auth = getAuth(app);
-// if (Astro.cookies.has("__session")) {
-//   const sessionCookie = Astro.cookies.get("__session");
-//     if (!sessionCookie) {
-//       return Astro.redirect("/auth/login");
-//     }
-//     const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
-//   if (decodedCookie) {
-//     return Astro.redirect("/auth/true/dashboard");
-//   }
-// }
+const auth = getAuth(app);
+if (Astro.cookies.has("__session")) {
+  const sessionCookie = Astro.cookies.get("__session");
+    if (!sessionCookie) {
+      return Astro.redirect("/auth/login");
+    }
+    const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+  if (decodedCookie) {
+    return Astro.redirect("/auth/true/dashboard");
+  }
+}
 ---
 
 <Register_
@@ -118,4 +118,4 @@ import Register_ from "@/layout/Layout.astro";
   </main>
 </Register_>
 
-<!-- <script src="../api/register.ts"> </script> -->
+<script src="../api/register.ts"> </script>
