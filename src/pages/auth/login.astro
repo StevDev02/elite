@@ -1,21 +1,20 @@
 ---
 // Layout
 import Login_ from "@/layout/Layout.astro"
-import { getAuth } from "firebase-admin/auth";
-import { app } from "@/firebase/server";
-import { usePassword } from "@/hooks/usePassword";
+// import { getAuth } from "firebase-admin/auth"
+// import { app } from "@/firebase/server"
 
-const auth = getAuth(app);
-if (Astro.cookies.has("__session")) {
-  const sessionCookie = Astro.cookies.get("__session");
-    if (!sessionCookie) {
-      return Astro.redirect("/auth/login");
-    }
-    const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
-  if (decodedCookie) {
-    return Astro.redirect("/auth/true/dashboard");
-  }
-}
+// const auth = getAuth(app);
+// if (Astro.cookies.has("__session")) {
+//   const sessionCookie = Astro.cookies.get("__session");
+//     if (!sessionCookie) {
+//       return Astro.redirect("/auth/login");
+//     }
+//     const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+//   if (decodedCookie) {
+//     return Astro.redirect("/auth/true/dashboard");
+//   }
+// }
 
 
 ---
@@ -63,7 +62,7 @@ if (Astro.cookies.has("__session")) {
           <h1 class="block text-xl font-bold text-gray-800 dark:text-white">
             Bienvenido de nuevo
           </h1>
-          <p class="text-xs text-black">De vuelta a la acción.</p> 
+          <p class="text-xs text-black">De vuelta a la acción?</p> 
         </div>
 
         <div class="mt-5 w-[298px]">

@@ -1,23 +1,23 @@
 ---
 import { app } from "@/firebase/server";
 import DashboardProvaider from "@/layout/Layout.astro";
-import { getAuth } from "firebase-admin/auth"
+// import { getAuth } from "firebase-admin/auth"
 
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
-if (!Astro.cookies.has("__session")) {
-  return Astro.redirect("/auth/login");
-}
-const sessionCookie = Astro.cookies.get("__session");
-if (!sessionCookie) {
-  return Astro.redirect("/auth/login");
-}
-const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
-const user = await auth.getUser(decodedCookie.uid);
+// if (!Astro.cookies.has("__session")) {
+//   return Astro.redirect("/auth/login");
+// }
+// const sessionCookie = Astro.cookies.get("__session");
+// if (!sessionCookie) {
+//   return Astro.redirect("/auth/login");
+// }
+// const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+// const user = await auth.getUser(decodedCookie.uid);
 
-if (!user) {
-  return Astro.redirect("/auth/login");
-}
+// if (!user) {
+//   return Astro.redirect("/auth/login");
+// }
 
 
 ---
@@ -29,10 +29,10 @@ if (!user) {
   keywords_page={[""]}
 >
 
-  <h1>Bienvenido {user.email}</h1>
+  <!-- <h1>Bienvenido {user.email}</h1> -->
   <p>Nos alegra verte aquí</p>
   <form action="/api/signout">
-    <button type="submit">Cerrar sesión</button>
+    <button class="border py-1 px-2 rounded-lg bg-black text-white" type="submit">Cerrar sesión</button>
   </form>
 
 </DashboardProvaider>
