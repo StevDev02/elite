@@ -1,7 +1,7 @@
 import { useEmail } from "@/hooks/useEmail";
-import { usePassword } from "@/hooks/usePassword";
 import { isValidEmail, isValidPassword } from "@/const/isValidationRegister";
 import { useState } from "react";
+import { usePassword } from "@/hooks/usePassword";
 
 export function Registers_Form() {
 

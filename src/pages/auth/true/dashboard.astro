@@ -5,7 +5,6 @@ import { getAuth } from "firebase-admin/auth"
 
 const auth = getAuth(app);
 
-/* Verificar la sesión actual */
 if (!Astro.cookies.has("__session")) {
   return Astro.redirect("/auth/login");
 }

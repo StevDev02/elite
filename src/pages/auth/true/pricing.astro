@@ -1,0 +1,131 @@
+---
+import { PricingComponents } from "@/components/PricingMobile"
+import { PricingPcComponent } from "@/components/PricingPc"
+import PrincinProvider from "@/layout/Layout.astro"
+---
+
+<PrincinProvider
+  title_page="Precios"
+  description_page=""
+  last_update="2024-05-02"
+  keywords_page={[""]}>
+
+  <nav class="flex items-center justify-start w-full px-8 py-1 h-14">
+    
+    <div class="w-full lg:hidden md:hidden">
+  
+        <div class="flex items-center justify-between w-full">
+            <div class="cursor-pointer active:bg-[#e4e4e7] p-2 rounded-full">
+              <svg class="dark:text-white" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </div>
+        </div>
+        
+    </div>
+    <div class="grid place-content-center w-full">
+      <div class="md:w-[639px] lg:w-[1039px] lg:max-w-[1039px] items-center justify-between hidden w-full h-full p-0 m-0 md:flex lg:flex">
+          <div class="flex items-center justify-center p-0 m-0 md:cursor-pointer lg:cursor-pointer lg:w-14 md:h-14 md:w-14 lg:h-14">
+            <a href="/">
+              <svg class="dark:text-white" fill="currentColor" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                  width="3.5rem" height="3.5rem" viewBox="0 0 1000.000000 1000.000000"
+                  preserveAspectRatio="xMidYMid meet">
+          
+                  <g transform="translate(0.000000,1000.000000) scale(0.100000,-0.100000)"stroke="none">
+                      <path d="M6105 6208 l-1117 -1123 -1114 1120 -1114 1120 0 -2217 c0 -2101 1
+                      -2218 18 -2227 14 -9 185 157 1120 1092 l1102 1102 0 -1108 0 -1107 1115 0
+                      1115 0 0 2235 c0 1229 -2 2235 -4 2235 -2 0 -507 -505 -1121 -1122z"/>
+                  </g>
+              </svg>
+          </a>
+          </div>
+          <div class="flex items-center justify-center gap-6">
+              <div class="flex items-center justify-center gap-1 lg:text-base">
+                  <a href="/auth/login" class="cursor-pointer dark:text-white md:text-sm lg:text-sm md:lg:font-semibold lg:font-semibold ">Iniciar Sesion</a>
+              </div>
+              <a href="/auth/register" class="md:w-[120px] lg:w-[120px] md:h-7 lg:h-7 hover:font-medium dark:hover:font-light dark:font-medium bg-black dark:bg-white  my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full  before:w-full before:h-full dark:hover:text-white before:shadow-2xl before:bg-gradient-to-r before:from-[#fff] hover:text-black before:to-[#fff] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 dark:before:from-[#000] dark:before:to-[#000] text-white dark:text-black">Unete</a >
+          </div>
+      </div>
+    </div>
+  </nav>
+
+    <section class=" gap-8 p-2 px-8 mt-16 grid place-content-center md:px-16 lg:gap-12 md:gap-y-10 text-center">
+        <h1 class="text-3xl lg:text-4xl md:text-3xl">Planes y Precios</h1>
+
+            <ul class=" lg:w-[905px] md:mt-10 lg:grid-cols-2 md:grid-cols-2 lg:px-28 grid place-content-center lg:gap-y-0 gap-y-14 py-10 w-full border-black rounded-xl lg:h-[160px] border  ">
+                <li class="grid place-content-center gap-y-3">
+                    <button class="rounded-full  font-semibold py-0.5 bg-black text-white">Cupo agotado</button>
+                    <p class="font-semibold text-2xl subrayado">Lunes 08 de abril</p>
+                </li>
+                <li class="grid place-content-center gap-y-3">
+                    <button class="rounded-full font-semibold py-0.5 bg-black text-white">Inicio disponible</button>
+                    <p class="font-semibold text-2xl subrayado">Lunes 08 de julio</p>
+                </li>
+            </ul>
+
+        <ul class="grid md:grid-cols-2 md:gap-5 items-center lg:flex gap-10  ">
+            <li class="lg:w-[255px] grid place-content-center md:w-[310px] w-[324px] border-black rounded-xl lg:h-[333px] h-[383px]  border gap-y-20">
+                
+                <div class=" grid place-content-center gap-y-2">
+                    <p class="font-black text-4xl ">Basico</p>
+                <button class="rounded-full cursor-default py-0.5 text-xs px-4 grid place-content-center bg-black text-white">Pago mensual</button>
+                </div>
+
+
+                <div class=" grid place-content-center gap-y-4">
+                    <p class="font-black text-4xl ">$29.99</p>
+                    <button class="rounded-full py-0.5 text-lg px-8 grid place-content-center bg-black text-white">Adquirir</button>
+                </div>
+                
+
+            </li>
+            <li class="lg:w-[345px] grid place-content-center md:w-[310px] w-[324px] border-black rounded-xl lg:h-[383px] h-[383px]  border gap-y-20">
+                <div class=" grid place-content-center gap-y-2">
+                    <p class="font-black text-4xl ">Estandar</p>
+                    <button class="rounded-full cursor-default py-0.5 text-xs px-4 grid place-content-center bg-black text-white">Pago mensual</button>
+                </div>
+
+                <div class=" grid place-content-center gap-y-4">
+                    <p class="font-black text-4xl ">$54.99</p>
+                    <button class="rounded-full py-0.5 text-lg px-8 grid place-content-center bg-black text-white">Prueba 7 días</button>
+                </div>
+            </li>
+            <li class="lg:w-[255px] grid place-content-center md:w-[638px] w-[324px] border-black rounded-xl lg:h-[333px] h-[383px]  border gap-y-20">
+                <div class=" grid place-content-center gap-y-2">
+                    <p class="font-black text-4xl ">Premium</p>
+                    <button class="rounded-full cursor-default py-0.5 text-xs px-4 grid place-content-center bg-black text-white">Pago mensual</button>
+                </div>
+
+                <div class=" grid place-content-center gap-y-4">
+                    <p class="font-black text-4xl ">$54.99</p>
+                    <button class="rounded-full py-0.5 text-lg px-8 grid place-content-center bg-black text-white">Adquirir</button>
+                </div>
+            </li>
+        </ul>
+
+    </section>
+
+    <section class=" gap-8 p-2 px-8 mt-16 grid place-content-center md:px-16 lg:gap-12 md:gap-y-10 text-center">
+        <PricingComponents />
+        <ul class="hidden lg:grid">
+            <li class="flex items-center rounded-full justify-between px-10 text-sm font-normal py-1.5 w-[930px]">
+                <h3 class="text-3xl font-black">Detalles</h3>
+                <h3 class="text-2xl font-extrabold">Basico</h3>
+                <h3 class="text-2xl font-extrabold">Estandar</h3>
+                <h3 class="text-2xl font-extrabold">Premium</h3>
+            </li>
+        </ul>
+        <PricingPcComponent />
+    </section>
+
+    <section class=" gap-8 p-2 px-8 mt-16 grid place-content-center md:px-16 lg:gap-12 md:gap-y-10 text-center">
+    </section>
+
+  
+  
+
+</PrincinProvider>
+
+<style>
+    .subrayado {
+
+    }
+</style>

@@ -3,6 +3,7 @@
 import Login_ from "@/layout/Layout.astro"
 import { getAuth } from "firebase-admin/auth";
 import { app } from "@/firebase/server";
+import { usePassword } from "@/hooks/usePassword";
 
 const auth = getAuth(app);
 if (Astro.cookies.has("__session")) {
@@ -15,6 +16,7 @@ if (Astro.cookies.has("__session")) {
     return Astro.redirect("/auth/true/dashboard");
   }
 }
+
 
 ---
 
@@ -158,6 +160,7 @@ if (Astro.cookies.has("__session")) {
                 </div>
                 <div class="relative">
                   <input
+                    
                     placeholder="@cademy2024"
                     type="password"
                     name="password" id="password"
@@ -224,46 +227,10 @@ if (Astro.cookies.has("__session")) {
               </p>
             </div>
           </form>
-          <!-- End Form -->
         </div>
       </div>
     </div>
   </main>
 </Login_>
 
-<script>
-  import { actions } from "astro:actions";
-  import { isInputError } from "astro:actions";
-
-  const form_login = document.querySelector("#login-account-form") as HTMLFormElement;
-
-  form_login.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const { error, data } = await actions.loginAccount.safe(new FormData(form_login));
-
-    if (error) {
-      console.error(error);
-      if (isInputError(error)) {
-        console.error("Input error:", error);
-      }
-      return;
-    }
-
-    const idToken = data.idToken;
-
-    // Hacer una solicitud para crear la cookie de sesión
-    const response = await fetch('/api/create-session', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${idToken}`
-      }
-    });
-
-    if (response.ok) {
-      window.location.href = "/auth/true/dashboard";
-    } else {
-      console.error('Error al crear la sesión');
-    }
-  });
-</script>
+<script src="../api/singin.ts"> </script>
