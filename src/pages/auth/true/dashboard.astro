@@ -5,27 +5,17 @@ import { getAuth } from "firebase-admin/auth"
 
 const auth = getAuth(app);
 
-try {
-  if (!Astro.cookies.has("__session")) {
-    return Astro.redirect("/auth/login");
-  }
-  
-  const sessionCookie = Astro.cookies.get("__session");
-  if (!sessionCookie) {
-    return Astro.redirect("/auth/login");
-  }
+if (!Astro.cookies.has("__session")) {
+  return Astro.redirect("/auth/login");
+}
+const sessionCookie = Astro.cookies.get("__session");
+if (!sessionCookie) {
+  return Astro.redirect("/auth/login");
+}
+const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
+const user = await auth.getUser(decodedCookie.uid);
 
-  const decodedCookie = await auth.verifySessionCookie(sessionCookie.value);
-  const user = await auth.getUser(decodedCookie.uid);
-
-  if (!user) {
-    return Astro.redirect("/auth/login");
-  }
-
-  return Astro.redirect("/auth/true/dashboard");
-
-} catch (error) {
-  console.error('Error verifying session or fetching user:', error);
+if (!user) {
   return Astro.redirect("/auth/login");
 }
 
