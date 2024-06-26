@@ -87,8 +87,8 @@ export function PricingPcComponent() {
         <>
             <ul className="w-full hidden lg:grid -mt-8">
                 {prices.map((group, index) => (
-                    <li key={index} className={`flex text-center items-center justify-between px-10 text-sm font-normal py-1.5 w-[930px] ${index % 2 === 0 ? 'text-white bg-black rounded-full' : 'border border-black rounded-full'}`}>
-                        <h3 className="font-normal">{group.label[0].value}</h3>
+                    <li key={index} className={`grid grid-cols-4 text-start items-center justify-center gap-x-28 px-[49px] text-sm font-medium h-[44px] w-[1005px] ${index % 2 === 0 ? 'text-white bg-black rounded-full' : 'border border-black rounded-full'}`}>
+                        <h3 className="font-medium">{group.label[0].value}</h3>
                         <p>{group.label[0].label_one}</p>
                         <p>{group.label[0].label_two}</p>
                         <p>{group.label[0].label_three}</p>
