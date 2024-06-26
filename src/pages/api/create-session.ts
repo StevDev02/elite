@@ -23,6 +23,7 @@ export const POST: APIRoute = async ({ request, cookies }) => {
 
   cookies.set("__session", sessionCookie, {
     path: "/",
+    secure: process.env.NODE_ENV === 'production',
   });
 
   return new Response(null, { status: 200 });
